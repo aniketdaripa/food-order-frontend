@@ -4,7 +4,7 @@ import Modal from '../UI/Modal';
 import CartItem from './CartItem';
 import classes from './Cart.module.css';
 import CartContext from '../store/cart-context';
-
+import GooglePayBtn from "../GooglePayBtn";
 const Cart = (props) => {
   const cartCtx = useContext(CartContext);
 
@@ -45,7 +45,7 @@ const Cart = (props) => {
         <button className={classes['button--alt']} onClick={props.onClose}>
           Close
         </button>
-        {hasItems && <button className={classes.button} onClick={()=>console.log("ordering")}>Order</button>}
+        {hasItems && <button className={classes.button} onClick={()=>console.log("ordering")}><GooglePayBtn price={totalAmount}/></button>}
       </div>
     </Modal>
   );
